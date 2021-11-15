@@ -1,0 +1,10 @@
+C:\Users\filip\source\repos\Musicalog\MediaLib\bin\Debug\netcoreapp3.1\MediaLib.deps.json
+C:\Users\filip\source\repos\Musicalog\MediaLib\bin\Debug\netcoreapp3.1\MediaLib.dll
+C:\Users\filip\source\repos\Musicalog\MediaLib\bin\Debug\netcoreapp3.1\MediaLib.pdb
+C:\Users\filip\source\repos\Musicalog\MediaLib\bin\Debug\netcoreapp3.1\MediaLib.xml
+C:\Users\filip\source\repos\Musicalog\MediaLib\obj\Debug\netcoreapp3.1\MediaLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\source\repos\Musicalog\MediaLib\obj\Debug\netcoreapp3.1\MediaLib.AssemblyInfoInputs.cache
+C:\Users\filip\source\repos\Musicalog\MediaLib\obj\Debug\netcoreapp3.1\MediaLib.AssemblyInfo.cs
+C:\Users\filip\source\repos\Musicalog\MediaLib\obj\Debug\netcoreapp3.1\MediaLib.csproj.CoreCompileInputs.cache
+C:\Users\filip\source\repos\Musicalog\MediaLib\obj\Debug\netcoreapp3.1\MediaLib.dll
+C:\Users\filip\source\repos\Musicalog\MediaLib\obj\Debug\netcoreapp3.1\MediaLib.pdb

@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Musicalog</name>
+    </assembly>
+    <members>
+        <member name="T:Musicalog.Controllers.CdMediaController">
+            <summary>
+            CD web Controller specialization.
+            </summary>
+        </member>
+        <member name="M:Musicalog.Controllers.CdMediaController.#ctor(Microsoft.Extensions.Logging.ILogger{Musicalog.Controllers.GenericMediaController},Musicalog.Models.IMediaCollection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="medias"></param>
+        </member>
+        <member name="T:Musicalog.Controllers.GenericMediaController">
+            <summary>
+            Base mediaController with the generic methods, this way a specific media type can rewrite the method if needed.
+            </summary>
+        </member>
+        <member name="M:Musicalog.Controllers.GenericMediaController.#ctor(Microsoft.Extensions.Logging.ILogger{Musicalog.Controllers.GenericMediaController},Musicalog.Models.IMediaCollection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="medias"></param>
+        </member>
+        <member name="M:Musicalog.Controllers.GenericMediaController.Media(System.String,System.String)">
+            <summary>
+            GET media, can apply filters to the search using a query string.
+            </summary>
+            <param name="Title"></param>
+            <param name="Artist"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Musicalog.Controllers.GenericMediaController.Media(Musicalog.Models.MediaRequest)">
+            <summary>
+            POST Add a media item.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Musicalog.Controllers.GenericMediaController.Media(Musicalog.Models.MediaEditRequest)">
+            <summary>
+            PATCH edit a media item.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Musicalog.Controllers.GenericMediaController.Media(System.Int32)">
+            <summary>
+            PATCH delete a media item.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Musicalog.Controllers.MediaController">
+            <summary>
+            Media controller, to be used if we want to operate all media types at once.
+            </summary>
+        </member>
+        <member name="M:Musicalog.Controllers.MediaController.#ctor(Microsoft.Extensions.Logging.ILogger{Musicalog.Controllers.GenericMediaController},Musicalog.Models.IMediaCollection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="medias"></param>
+        </member>
+        <member name="T:Musicalog.Controllers.VinylMediaController">
+            <summary>
+            Vinyl Web controller specialization
+            </summary>
+        </member>
+        <member name="M:Musicalog.Controllers.VinylMediaController.#ctor(Microsoft.Extensions.Logging.ILogger{Musicalog.Controllers.GenericMediaController},Musicalog.Models.IMediaCollection)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="medias"></param>
+        </member>
+        <member name="T:Musicalog.Models.MediaEditRequest">
+            <summary>
+            Object for edit media item web post request.
+            </summary>
+        </member>
+        <member name="P:Musicalog.Models.MediaEditRequest.Index">
+            <summary>
+            The index of the media to edit.
+            </summary>
+        </member>
+        <member name="T:Musicalog.Models.MediaRepository">
+            <summary>
+            Media items repository. Latter on when using a database change this.
+            </summary>
+        </member>
+        <member name="M:Musicalog.Models.MediaRepository.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:Musicalog.Models.MediaRepository.Add(MediaLib.Template.Media)">
+            <summary>
+            Add item. Just in case we want to add some logic to this latter on.
+            </summary>
+            <param name="mediaItem"></param>
+        </member>
+        <member name="M:Musicalog.Models.MediaRepository.Delete(MediaLib.Template.Media)">
+            <summary>
+            Delete media item.
+            </summary>
+            <param name="mediaItem"></param>
+        </member>
+        <member name="M:Musicalog.Models.MediaRepository.Delete(System.Int32)">
+            <summary>
+            Delete media item.
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Musicalog.Models.MediaRepository.Edit(System.Int32,MediaLib.Template.Media)">
+            <summary>
+            Edit media item.
+            </summary>
+            <param name="index"></param>
+            <param name="mediaItem"></param>
+        </member>
+        <member name="M:Musicalog.Models.MediaRepository.IndexOf(MediaLib.Template.Media)">
+            <summary>
+            What is the index of this media item.
+            </summary>
+            <param name="mediaItem"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Musicalog.Models.MediaRequest">
+            <summary>
+            Object definition media request post.
+            </summary>
+        </member>
+        <member name="P:Musicalog.Models.MediaRequest.Title">
+            <summary>
+            The title
+            </summary>
+        </member>
+        <member name="P:Musicalog.Models.MediaRequest.Artist">
+            <summary>
+            The artist name
+            </summary>
+        </member>
+        <member name="P:Musicalog.Models.MediaRequest.Type">
+            <summary>
+            The media type
+            </summary>
+        </member>
+        <member name="P:Musicalog.Models.MediaRequest.Stock">
+            <summary>
+            Stock amount.
+            </summary>
+        </member>
+        <member name="T:Musicalog.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Musicalog.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Musicalog.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Musicalog.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:Musicalog.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Musicalog.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Musicalog.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Musicalog.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

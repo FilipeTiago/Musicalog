@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Testings</name>
+    </assembly>
+    <members>
+        <member name="T:Testings.SearchEngineTests">
+            <summary>
+            Test class for testing the search engine.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.GenerateName(System.Int32)">
+            <summary>
+            Random name generator, used to generate random artist names and titles.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Testings.SearchEngineTests.Setup">
+            <summary>
+            Set up the testing environment.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByExistingArtist">
+            <summary>
+            Test if finding by an artist name returns the media item. This is a exact match test.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByNonExistingArtist">
+            <summary>
+            Test if finding by an artist name that does not exists returns nothing. This is a exact match test.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByExistingArtistTrimed">
+            <summary>
+            Test if finding by an artist name returns the media item. This is a partial name match find.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByExistingTitle">
+            <summary>
+            Test if finding by an title returns the media item. This is a exact match test.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByNonExistingTitle">
+            <summary>
+            Test if finding by an title that does not exists returns nothing. This is a exact match test.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByExistingTitleTrimed">
+            <summary>
+            Test if finding by an title returns the media item. This is a partial name match find.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByExistingArtistAndTitle">
+            <summary>
+            Test if combining multiple rules existing artist and title (same media item) returns the media item. This is a exact match test.
+            </summary>
+        </member>
+        <member name="M:Testings.SearchEngineTests.FindByExistingArtistAndTitleTrimed">
+            <summary>
+            Test if combining multiple rules existing artist and title (same media item) partial names returns the media item. This is a partial name match find.
+            </summary>
+        </member>
+    </members>
+</doc>

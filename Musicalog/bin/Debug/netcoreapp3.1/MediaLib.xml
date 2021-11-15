@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MediaLib</name>
+    </assembly>
+    <members>
+        <member name="T:MediaLib.Enums.MediaType">
+            <summary>
+            Currently supported media types
+            </summary>
+        </member>
+        <member name="F:MediaLib.Enums.MediaType.Uncategorized">
+            <summary>
+            0 - not categorized media type
+            </summary>
+        </member>
+        <member name="F:MediaLib.Enums.MediaType.Vinyl">
+            <summary>
+            1 - Vinyl media type
+            </summary>
+        </member>
+        <member name="F:MediaLib.Enums.MediaType.Cd">
+            <summary>
+            2 - Cd Media type
+            </summary>
+        </member>
+        <member name="T:MediaLib.Helpers.MatchByArtist">
+            <summary>
+            Rules to match a media item by artist name.
+            </summary>
+        </member>
+        <member name="P:MediaLib.Helpers.MatchByArtist.Rule">
+            <inheritdoc/>>
+        </member>
+        <member name="M:MediaLib.Helpers.MatchByArtist.IsMatch(MediaLib.Template.Media)">
+            <inheritdoc/>>
+        </member>
+        <member name="M:MediaLib.Helpers.MatchByArtist.#ctor(MediaLib.SearchRules.StringSearchRule)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="rule">The rule definition</param>
+        </member>
+        <member name="T:MediaLib.Helpers.MatchByTitle">
+            <summary>
+            Rules to match a media item by media title.
+            </summary>
+        </member>
+        <member name="P:MediaLib.Helpers.MatchByTitle.Rule">
+            <inheritdoc/>>
+        </member>
+        <member name="M:MediaLib.Helpers.MatchByTitle.IsMatch(MediaLib.Template.Media)">
+            <inheritdoc/>>
+        </member>
+        <member name="M:MediaLib.Helpers.MatchByTitle.#ctor(MediaLib.SearchRules.StringSearchRule)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="rule">The rule definition</param>
+        </member>
+        <member name="T:MediaLib.Helpers.SearchEngine">
+            <summary>
+            Search engine. This static class is to handle the search requests given a collection of items and rules.
+            </summary>
+        </member>
+        <member name="M:MediaLib.Helpers.SearchEngine.Search(System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.IEnumerable{MediaLib.Interfaces.IMatchRule{MediaLib.Template.Media}})">
+            <summary>
+            Search a collection with rules.
+            </summary>
+            <param name="data">The data to search.</param>
+            <param name="rules">The rules to apply</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediaLib.Interfaces.IMatchRule`1">
+            <summary>
+            Interface for search items with a specific rule.
+            </summary>
+            <typeparam name="T">The type of object used for matching</typeparam>
+        </member>
+        <member name="P:MediaLib.Interfaces.IMatchRule`1.Rule">
+            <summary>
+            The rule to be used by the search
+            </summary>
+        </member>
+        <member name="M:MediaLib.Interfaces.IMatchRule`1.IsMatch(`0)">
+            <summary>
+            If the entry item match the given rules.
+            </summary>
+            <param name="entry">The entry item to be tested</param>
+            <returns>Boolean with the match outcome</returns>
+        </member>
+        <member name="T:MediaLib.Interfaces.IMedia">
+            <summary>
+            Interface for media item types.
+            </summary>
+        </member>
+        <member name="P:MediaLib.Interfaces.IMedia.Title">
+            <summary>
+            Title of the media
+            </summary>
+        </member>
+        <member name="P:MediaLib.Interfaces.IMedia.Artist">
+            <summary>
+            The artist name
+            </summary>
+        </member>
+        <member name="P:MediaLib.Interfaces.IMedia.Type">
+            <summary>
+            The type of media. 
+            </summary>
+        </member>
+        <member name="P:MediaLib.Interfaces.IMedia.Stock">
+            <summary>
+            Number of items in stock
+            </summary>
+        </member>
+        <member name="P:MediaLib.Interfaces.IMedia.Available">
+            <summary>
+            Is the media available?
+            </summary>
+        </member>
+        <member name="T:MediaLib.Medias.Cd">
+            <summary>
+            The CD media type.
+            </summary>
+        </member>
+        <member name="P:MediaLib.Medias.Cd.Title">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Medias.Cd.Artist">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Medias.Cd.Type">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Medias.Cd.Stock">
+            <inheritdoc/>>
+        </member>
+        <member name="T:MediaLib.Medias.Vinyl">
+            <summary>
+            The Vinyl media type.
+            </summary>
+        </member>
+        <member name="P:MediaLib.Medias.Vinyl.Title">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Medias.Vinyl.Artist">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Medias.Vinyl.Type">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Medias.Vinyl.Stock">
+            <inheritdoc/>>
+        </member>
+        <member name="T:MediaLib.SearchRules.StringSearchRule">
+            <summary>
+            String search rule to be used by the search engine.
+            </summary>
+        </member>
+        <member name="P:MediaLib.SearchRules.StringSearchRule.Text">
+            <summary>
+            The text to be found.
+            </summary>
+        </member>
+        <member name="P:MediaLib.SearchRules.StringSearchRule.StringComparison">
+            <summary>
+            String comparison rules (case sensitive and cultural rules).
+            </summary>
+        </member>
+        <member name="P:MediaLib.SearchRules.StringSearchRule.ExactMatch">
+            <summary>
+            Is this a exact or partial match.
+            </summary>
+        </member>
+        <member name="T:MediaLib.Template.Media">
+            <summary>
+            Template for the media items.
+            Reason being is that the available by default is if stock is bigger then 0. But maybe in some rare cases it might be a diferent rule.
+            </summary>
+        </member>
+        <member name="P:MediaLib.Template.Media.Title">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Template.Media.Artist">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Template.Media.Type">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Template.Media.Stock">
+            <inheritdoc/>>
+        </member>
+        <member name="P:MediaLib.Template.Media.Available">
+            <inheritdoc/>>
+        </member>
+    </members>
+</doc>
